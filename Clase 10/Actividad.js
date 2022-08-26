@@ -22,7 +22,7 @@ const prompt = require("prompt-sync")({ sigint: true });
 
 // Devuelve el valor de str ya que al llamaron con el lenght -1 empieza por el final en vez del principio
 
-let peliculas = ["star wars", "totoro", "rocky", "pulp fiction", "la vida es bella"]
+// let peliculas = ["star wars", "totoro", "rocky", "pulp fiction", "la vida es bella"]
 
 // console.log(peliculas[1])
 
@@ -33,11 +33,38 @@ let peliculas = ["star wars", "totoro", "rocky", "pulp fiction", "la vida es bel
 
 // let nuevasPelis = ["toy story", "finding Nemo", "kung-fu panda", "wally", "fortnite"]
 
-peliculas.push("toy story", "finding Nemo", "kung-fu panda", "wally", "fortnite")
+// peliculas.push("toy story", "finding Nemo", "kung-fu panda", "wally", "fortnite")
 // function todasLasPelis (a,b) {
 //     // b.toUpperCase()
 //     a.push(b)
 
-console.log(peliculas)
+// console.log(peliculas)
 
+// En este ejercicio, deberás crear una función sumaArray() que acepte un arreglo de
+// números (3 elementos) y devuelva la suma de todos ellos. Ejemplo:
+// ● sumArray([1,2,3]) // 6
+// ● sumArray([10, 3, 10]) // 23
+// ● sumArray([-5,100, 19]) // 114
 
+// let numeros = [10,5,10]
+// function sumaArray(a,b,c) {
+//     a = numeros[0]
+//     b = numeros[1]
+//     c = numeros[2]
+//     resultado = a + b + c
+//     return resultado
+// }
+
+// console.log(sumaArray())
+
+function suma_array(array){
+    let suma = 0;
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        suma += element;
+    }
+
+    return suma;
+}
+
+console.log(suma_array([10,9,100]));
