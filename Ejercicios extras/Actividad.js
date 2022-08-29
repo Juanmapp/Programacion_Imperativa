@@ -115,14 +115,50 @@ for (let i = 0; i < tempArray.length; i++) {
 console.log(duplicados);
 /*
 
-5 - Funcion que reciba un array de edades y una edad a buscar, retorne el primer índice si encuentra coincidencia o null caso contrario
-6 - Funcion que reciba un array de edades y retorne un objeto literal con dos propiedades que contengan un array
+5 - Funcion que reciba un array de edades y una edad a buscar, retorne el primer índice si encuentra coincidencia o null caso contrario*/
+
+function busquedaNum (array, edad) {
+    buscando = array.indexOf(edad)
+    if (buscando == -1) {
+        console.log("null")
+    }
+    else {
+        console.log("El primer indice es : " + buscando)
+    }
+}
+busquedaNum(edades,111)
+
+
+
+/*6 - Funcion que reciba un array de edades y retorne un objeto literal con dos propiedades que contengan un array
    {
       edadesMenor : "// edades menor a 18",  
       edadesMayor : "// edades menor a 18"
-   }
+   } */
 
-C  Nivel 3
+function MayoroMenor(array) {
+    let mayores = []
+    let menores = []
+    // let buscandoEdad = array[i]
+    for (let i = 0 ; i < array.length; i++) { 
+        if ( array[i] < 18) {
+            menores.push(array[i])
+        }
+        else if ( array[i] > 18 && array[i] >= 0 ) {
+            mayores.push(array[i])
+        }
+        else {
+            console.log("ingrese una edad valida")
+        }
+    
+    }
+console.log(" Las edades mayores a 18 años son : " + mayores)
+console.log(" Las edades menores a 18 años son : "  + menores)
+}
+MayoroMenor(edades)
+
+
+/*C  Nivel 3
 
 1 - Desarrollar un objeto literal que contenga 5 propiedades que sean del siguiente tipo:
    - 2 String   
@@ -130,23 +166,127 @@ C  Nivel 3
    - 1 Number
    - 1 Array
    - 1 Metodo que retorne un saludito
-    * por ejemplo:
+    * por ejemplo:*/
     
-     let canHijo = {
-       nombre : 'Negrito',
-       color  : 'Negrito',
-       estaVacunado : true,
-       edad : 10,
-       vacunas : ['Leptospirosis', 'Hepatitis', 'Parvovirus'],
-       saludo: function(){
-           return 'wouf wouf wouf..'
-       } 
-     }
+let canHijo = {
+    nombre : 'Negrito',
+    color  : 'Negrito',
+    staVacunado : true,
+    edad : 10,
+    vacunas : ['Leptospirosis', 'Hepatitis', 'Parvovirus'],
+    saludo: function(){
+        return 'wouf wouf wouf..'
+    } 
+    }
     
-  - Luego desarrollar una funcion que liste individualmente los elementos de la propiedad del tipo Array 
+/* - Luego desarrollar una funcion que liste individualmente los elementos de la propiedad del tipo Array */
+
+// function listaArray(objeto, array) {
+
+//     for (let i = 0; i < array.length ; i++) {
+//     let listado = objeto.array[i]
+//     console.log(listado)
+
+//     }
+// }
+// listaArray(canHijo, vacunas)
+
+// console.log(canHijo.vacunas[0])
 
 
-2 - Dado el Siguiente array de personas desarrollar funciones:
+
+
+
+let personas = [
+    {
+      id: 0,
+      isProgrammer: true,
+      age: 28,
+      name: "Harrington Curry",
+      company: "TRANSLINK",
+      favoriteFruit: "strawberry"
+    },
+    {
+      id: 1,
+      isProgrammer: false,
+      age: 38,
+      name: "Greta Morton",
+      company: "PYRAMI",
+      favoriteFruit: "apple"
+    },
+    {
+      id: 2,
+      isProgrammer: false,
+      age: 32,
+      name: "Hester Bowen",
+      company: "TURNABOUT",
+      favoriteFruit: "apple"
+    },
+    {
+      id: 3,
+      isProgrammer: false,
+      age: 25,
+      name: "Melendez Mcfarland",
+      company: "XSPORTS",
+      favoriteFruit: "strawberry"
+    },
+    {
+      id: 4,
+      isProgrammer: false,
+      age: 31,
+      name: "Kimberly Matthews",
+      company: "KNOWLYSIS",
+      favoriteFruit: "banana"
+    },
+    {
+      id: 5,
+      isProgrammer: false,
+      age: 36,
+      name: "Hardin Sims",
+      company: "SEALOUD",
+      favoriteFruit: "banana"
+    },
+    {
+      id: 6,
+      isProgrammer: false,
+      age: 29,
+      name: "Natalia Huff",
+      company: "ENERSOL",
+      favoriteFruit: "apple"
+    }
+  ]
+function nombres(array) {
+    for (let i = 0; i < array.length; i++) {
+        console.log(array[i].name)
+    }
+}
+nombres(personas)
+
+function programadores(array) {
+    let hayProgramadores = []
+    for (let i = 0; i < array.length; i++) {
+        if (personas[i].isProgrammer === true) {
+            hayProgramadores.push(array[i].name)
+        }
+    
+    }
+console.log(hayProgramadores)
+}
+programadores(personas)
+
+function buscarId(array, ident) {
+    for (let i = 0; i < array.length; i++) {
+        if (ident === array[i].id) {
+            console.log(array[i].name)
+        }
+        else {
+            console.log("null") /* aca como hacemos para que no este dentro del loop?*/
+        }
+    }
+}
+buscarId(personas, 6)
+
+/* 2 - Dado el Siguiente array de personas desarrollar funciones:
   - Funcion que reciba el array de personas y liste el nombre de cada una. 
   - Funcion que reciba el array de personas y retorne en un array los que son programadores.
   - Funcion que reciba el array de personas y un id a buscar, 
@@ -154,73 +294,12 @@ C  Nivel 3
        caso contrario retorne null
   - Funcion que reciba el array de personas y un id a buscar, 
        retorne la persona en caso de encontrar, 
-       caso contrario retorne null 
+       caso contrario retorne null */
+
+// Tips
+
+// * Es para que practiquen sintaxis ademas del pensamiento computacional, piensen tipo de datos posibles.
+// * Desarrollen y lean enunciados en voz alta, utilicen abstracción, vean las alternativas de llegar al mismo resultado de diferentes formas
 
 
-[
-    {
-      "id": 0,
-      "isProgrammer": true,
-      "age": 28,
-      "name": "Harrington Curry",
-      "company": "TRANSLINK",
-      "favoriteFruit": "strawberry"
-    },
-    {
-      "id": 1,
-      "isProgrammer": false,
-      "age": 38,
-      "name": "Greta Morton",
-      "company": "PYRAMI",
-      "favoriteFruit": "apple"
-    },
-    {
-      "id": 2,
-      "isProgrammer": false,
-      "age": 32,
-      "name": "Hester Bowen",
-      "company": "TURNABOUT",
-      "favoriteFruit": "apple"
-    },
-    {
-      "id": 3,
-      "isProgrammer": false,
-      "age": 25,
-      "name": "Melendez Mcfarland",
-      "company": "XSPORTS",
-      "favoriteFruit": "strawberry"
-    },
-    {
-      "id": 4,
-      "isProgrammer": false,
-      "age": 31,
-      "name": "Kimberly Matthews",
-      "company": "KNOWLYSIS",
-      "favoriteFruit": "banana"
-    },
-    {
-      "id": 5,
-      "isProgrammer": false,
-      "age": 36,
-      "name": "Hardin Sims",
-      "company": "SEALOUD",
-      "favoriteFruit": "banana"
-    },
-    {
-      "id": 6,
-      "isProgrammer": false,
-      "age": 29,
-      "name": "Natalia Huff",
-      "company": "ENERSOL",
-      "favoriteFruit": "apple"
-    }
-  ]
-
-
-Tips
-
-* Es para que practiquen sintaxis ademas del pensamiento computacional, piensen tipo de datos posibles.
-* Desarrollen y lean enunciados en voz alta, utilicen abstracción, vean las alternativas de llegar al mismo resultado de diferentes formas
-
-
-nota : Se recomienda utilizar estructuras y conceptos vistos en la materia */
+// nota : Se recomienda utilizar estructuras y conceptos vistos en la materia */
