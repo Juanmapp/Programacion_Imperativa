@@ -181,15 +181,20 @@ let canHijo = {
     
 /* - Luego desarrollar una funcion que liste individualmente los elementos de la propiedad del tipo Array */
 
-// function listaArray(objeto, array) {
 
-//     for (let i = 0; i < array.length ; i++) {
-//     let listado = objeto.array[i]
-//     console.log(listado)
+function listaArray(objeto) {    
+    
+    for (let i = 0; i < objeto.vacunas.length ; i++) {
+      console.log(objeto.vacunas[i])
+    
+    
+    }
+}
 
-//     }
-// }
-// listaArray(canHijo, vacunas)
+
+listaArray(canHijo,)
+
+
 
 // console.log(canHijo.vacunas[0])
 
