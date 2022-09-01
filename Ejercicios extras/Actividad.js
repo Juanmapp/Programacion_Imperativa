@@ -192,7 +192,7 @@ function listaArray(objeto) {
 }
 
 
-listaArray(canHijo,)
+listaArray(canHijo)
 
 
 
