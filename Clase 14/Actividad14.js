@@ -283,14 +283,60 @@ console.log(mayorSaldo(arrayCuentas))
 //     }
 //     return buscando
 // }
-// console.log(generarId(arrayCuentas))
+
+function generarID(array) {
+    for (let i = 0; i < array.length; i++) {
+        array[i].id =  i+1;
+    }
+    return array;
+}
+
+console.log(generarID(arrayCuentas));
+console.log("funcionara?")
+console.log(arrayCuentas)
+console.log("funcionara?2")
+
 
     
     // Desarrollar una función llamada buscarPorId que reciba como parámetro el array de cuentas y un id, en caso de encontrar retornar la cuenta (él objeto literal completo), caso contrario retornar null
-    
-    // Desarrollar una funcións llamada filtrarPorSaldos que reciba como parámetro el array de cuentas y un saldo (Number), deberá retornar un array que se cuyas cuentas se encuentren por debajo del saldo enviado por parámetro
-    
+
+function buscarPorId(array,iden) {
+    for (let i = 0 ; i < array.length; i++) {
+        if (array[i].id == iden) {
+            return array[i]
+        }
+    }
+}
+console.log(buscarPorId(arrayCuentas,4))
+console.log("funcionara?3")
+    // Desarrollar una funcións llamada filtrarPorSaldos que reciba como parámetro el array de cuentas y un saldo (Number), deberá retornar un array que cuyas cuentas se encuentren por debajo del saldo enviado por parámetro
+
+function filtrarPorSaldos (array,Number) {
+    let cuentasSaldoBajo = []
+        for ( let i = 0 ; i < array.length; i++) {
+            if (array[i].saldo < Number ) {
+                cuentasSaldoBajo.push(array[i])
+            }
+        }
+        return cuentasSaldoBajo
+}
+
+console.log(filtrarPorSaldos(arrayCuentas, 1380))
+console.log("funcionara?4")
     // Desarrollar una función llamada incrementarSaldo que reciba como parámetro el array de cuentas, un id y un saldo, deberá incrementar él saldo de la cuenta, en caso de encontrar, caso contrario retornar undefined 
-    // Reutilizando la función  buscarPorId   
-      
+ // Reutilizando la función  buscarPorId   
+
+function IncrementarSaldo(array,ident,masSaldo) { 
+    let cuentaASumar = array[0]
+    for(let i = 0 ; i < array.length; i++) { 
+        if (ident=== array[i].id) {
+        array[i].saldo = array[i].saldo + masSaldo
+        cuentaASumar = array[i]
+        }
+        
+    }
+    return cuentaASumar
+}
+console.log(IncrementarSaldo(arrayCuentas,5,10000))
+
 
