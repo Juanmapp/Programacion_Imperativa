@@ -144,6 +144,99 @@ a) Ordenar por temperatura mínima de menor a mayor.
 b) Ordenar por temperatura máxima de mayor a menor.*/
 
 let servicioMet = [
-    temperatura: 
+    {
+    dia: 1,
+    mes: 1,
+    temperaturaMin : 28,
+    temperaturaMax : 30
+},
+{
+    dia: 2,
+    mes: 1,
+    temperaturaMin : 23,
+    temperaturaMax : 28
+},
+{
+    dia: 3,
+    mes: 1,
+    temperaturaMin : 21,
+    temperaturaMax : 35
+},
+{
+    dia: 5,
+    mes: 2,
+    temperaturaMin : 20,
+    temperaturaMax : 26
+},
+{
+    dia: 6,
+    mes: 2,
+    temperaturaMin : 31,
+    temperaturaMax : 33
+},
+{
+    dia: 10,
+    mes: 3,
+    temperaturaMin : 17,
+    temperaturaMax : 21
+},
+{
+    dia: 3,
+    mes: 3,
+    temperaturaMin : 15,
+    temperaturaMax : 19
+},
+{
+    dia: 1,
+    mes: 4,
+    temperaturaMin : 11,
+    temperaturaMax : 17
+},
+{
+    dia: 7,
+    mes: 6,
+    temperaturaMin : 1,
+    temperaturaMax : 5
+},
+{
+    dia: 30,
+    mes: 7,
+    temperaturaMin : 3,
+    temperaturaMax : 7
+}
 ]
- 
+/*Ejercicio 2
+El servicio meteorológico, para llevar el control diario de temperatura, utiliza un
+objeto temperatura donde registra día —valor numérico del día—, mes —valor
+numérico—, temperatura máxima y temperatura mínima, correspondiente a dicho
+día. Las temperaturas —objeto temperatura— están cargados en un array.
+a) Ordenar por temperatura mínima de menor a mayor.
+b) Ordenar por temperatura máxima de mayor a menor.*/
+
+function temperaturas(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length -1; j++) {
+            if (array[j].temperaturaMax < array[j + 1].temperaturaMax) {
+                let orden = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = orden
+
+        }
+    }
+}return array
+}
+console.log(temperaturas(servicioMet))
+
+function temperaturas2(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length -1; j++) {
+            if (array[j].temperaturaMin > array[j + 1].temperaturaMin) {
+                let orden = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = orden
+
+        }
+    }
+}return array
+}
+console.log(temperaturas2(servicioMet))
