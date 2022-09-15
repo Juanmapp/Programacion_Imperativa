@@ -1,4 +1,4 @@
-let mes = [
+ let mes = [
     [1135,2500,900,1600,2800,3650,1100],   
     [1750,1890,1900,1300,898,1750,2800],
     [1700,1150,1690,1900,1770,4500,2560],
@@ -56,6 +56,7 @@ console.log(arrayMatriz)
 
 /*----Mesas de trabajo---*/
 
+// ejercicio 1
 
 let numerosEnteros = [
     [4, 6, 2, 3, 5],
@@ -76,7 +77,7 @@ function sumando(array) {
   }
   console.log(sumando(numerosEnteros));
 
-
+// Ejercicio 2 , forma 1
 
   function generarMatriz10por10() {
     let matriz = [[],[],[],[],[],[],[],[],[],[]];
@@ -92,6 +93,8 @@ function sumando(array) {
   
   let matriz10por10 = generarMatriz10por10();
   console.log(matriz10por10);
+
+// Ejercicio 2 , forma 2
 
 function generarMatriz2() {
     let matriz = []
@@ -111,12 +114,8 @@ function generarMatriz2() {
     
 }
 console.table(generarMatriz2())
-//   let arrayMatriz = []
-// let arrayX=["x0","x1","x2"]
-// let arrayY=["y0","y1","y2"]
-// arrayMatriz[0] = arrayX
-// arrayMatriz[1] = arrayY
-// console.log(arrayMatriz)
+
+/*ejercicio 3*/
 
 function resultados(array) { 
     let rojo = 0

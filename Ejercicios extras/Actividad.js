@@ -100,11 +100,11 @@ function repe(array) {
     }
     
 }
-console.log(repe(edades))
+// console.log(repe(edades))
 
-// 
+// // 
 
-let tempArray = [...edades].sort();
+// let tempArray = [...edades].sort();
 
 for (let i = 0; i < tempArray.length; i++) {
   if (tempArray[i + 1] === tempArray[i]) {
